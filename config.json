@@ -1,0 +1,17 @@
+{
+  "host":                     "localhost",
+  "port":                     8988,
+  "collection":               "techproducts",
+  "requestHandler":           "query",
+  "q":                        "*:*",
+  "efiParams":                "efi.user_query='$USERQUERY'",
+  "userQueriesFile":          "user_queries.txt",
+  "trainingFile":             "exampleTrainingFile.txt",
+  "trainedModelFile":         "exampleTrainedModel.txt",
+  "trainingLibraryLocation":  "C:\Users\zhanga4\AppData\Local\Programs\Python\Python37-32\Lib\site-packages\liblinear-2.11.2-py3.7.egg-info",
+  "trainingLibraryOptions":   "-q",
+  "solrFeaturesFile":         "exampleFeatures.json",
+  "solrFeatureStoreName":     "exampleFeatureStore",
+  "solrModelFile":            "exampleModel.json",
+  "solrModelName":            "exampleModel"
+}
