@@ -8,10 +8,10 @@
   "userQueriesFile":          "user_queries.txt",
   "trainingFile":             "exampleTrainingFile.txt",
   "trainedModelFile":         "exampleTrainedModel.txt",
-  "trainingLibraryLocation":  "C:\Users\zhanga4\AppData\Local\Programs\Python\Python37-32\Lib\site-packages\liblinear-2.11.2-py3.7.egg-info",
-  "trainingLibraryOptions":   "-q",
-  "solrFeaturesFile":         "exampleFeatures.json",
+  "trainingLibraryLocation":   "C:/Codes/PythonCode/TestSolrLTR/venv/Scripts/liblinear.exe",
+  "trainingLibraryOptions":   "C:/Codes/PythonCode/TestSolrLTR/venv/lib/site-packages/liblinear/__init__.py",
   "solrFeatureStoreName":     "exampleFeatureStore",
+  "solrFeaturesFile":         "exampleFeatures.json",
   "solrModelFile":            "exampleModel.json",
   "solrModelName":            "exampleModel"
 }

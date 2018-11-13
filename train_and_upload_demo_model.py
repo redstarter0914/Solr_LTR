@@ -51,27 +51,27 @@ def generateQueries(userQueriesFile, collection, requestHandler, solrFeatureStor
             solrQueryUrls = [] #A list of tuples with solrQueryUrl,solrQuery,docId,scoreForPQ,source
 
             for line in input:
-                line = line.strip();
-                searchText,docId,score,source = line.split("|");
-                solrQuery = generateHttpRequest(collection,requestHandler,solrFeatureStoreName,efiParams,searchText,docId)
-                solrQueryUrls.append((solrQuery,searchText,docId,score,source))
+                line = line.strip()
+                searchText, docId, score, source = line.split("|")
+                solrQuery = generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId)
+                solrQueryUrls.append((solrQuery, searchText, docId, score, source))
 
-        return solrQueryUrls;
+        return solrQueryUrls
 
 
 def generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId):
     global solrQueryUrl
     if len(solrQueryUrl) < 1:
-        solrQueryUrl = "/".join([ "", "solr", collection, requestHandler ])
-        solrQueryUrl += ("?fl=" + ",".join([ "id", "score", "[features store="+solrFeatureStoreName+" "+efiParams+"]" ]))
+        solrQueryUrl = "/".join(["", "solr", collection, requestHandler])
+        solrQueryUrl += ("?fl=" + ",".join(["id", "score", "[features store="+solrFeatureStoreName+" "+efiParams+"]"]))
         solrQueryUrl += "&q="
-        solrQueryUrl = solrQueryUrl.replace(" ","+")
-        solrQueryUrl += urllib.quote_plus("id:")
+        solrQueryUrl = solrQueryUrl.replace(" ", "+")
+        solrQueryUrl += urllib.parse.quote_plus("id:")
 
 
-    userQuery = urllib.quote_plus(searchText.strip().replace("'","\\'").replace("/","\\\\/"))
-    solrQuery = solrQueryUrl + '"' + urllib.quote_plus(docId) + '"' #+ solrQueryUrlEnd
-    solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', urllib.quote_plus("\\'" + userQuery + "\\'"))
+    userQuery = urllib.parse.quote_plus(searchText.strip().replace("'", "\\'").replace("/", "\\\\/"))
+    solrQuery = solrQueryUrl + '"' + urllib.parse.quote_plus(docId) + '"' #+ solrQueryUrlEnd
+    solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', urllib.parse.quote_plus("\\'" + userQuery +"\\'"))
 
     return solrQuery
 
@@ -83,7 +83,7 @@ def generateTrainingData(solrQueries, host, port):
     headers = {"Connection":" keep-alive"}
 
     try:
-        for queryUrl,query,docId,score,source in solrQueries:
+        for queryUrl, query, docId, score, source in solrQueries:
             conn.request("GET", queryUrl, headers=headers)
             r = conn.getresponse()
             msg = r.read()
@@ -92,19 +92,19 @@ def generateTrainingData(solrQueries, host, port):
             docs = msgDict['response']['docs']
             if len(docs) > 0 and "[features]" in docs[0]:
                 if not msgDict['response']['docs'][0]["[features]"] == None:
-                    fv = msgDict['response']['docs'][0]["[features]"];
+                    fv = msgDict['response']['docs'][0]["[features]"]
                 else:
                     print("ERROR NULL FV FOR: " + docId)
                     print(msg)
-                    continue;
+                    continue
             else:
                 print("ERROR FOR: " + docId)
                 print(msg)
-                continue;
+                continue
 
             if r.status == http.client.OK:
                 #print "http connection was ok for: " + queryUrl
-                yield(query,docId,score,source,fv.split(","));
+                yield(query, docId, score, source, fv.split(","))
             else:
                 raise Exception("Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
     except Exception as e:
@@ -146,6 +146,7 @@ def main(argv=None):
     parser.add_option('-c', '--config',
                       dest='configFile',
                       help='File of configuration for the test')
+
     (options, args) = parser.parse_args()
 
     if options.configFile == None:
@@ -163,11 +164,11 @@ def main(argv=None):
 
         print("Running Solr queries to extract features")
         fvGenerator = generateTrainingData(reRankQueries, config["host"], config["port"])
-        formatter = libsvm_formatter.LibSvmFormatter();
-        formatter.processQueryDocFeatureVector(fvGenerator,config["trainingFile"]);
+        formatter = libsvm_formatter.LibSvmFormatter()
+        formatter.processQueryDocFeatureVector(fvGenerator, config["trainingFile"])
 
         print("Training model using '"+config["trainingLibraryLocation"]+" "+config["trainingLibraryOptions"]+"'")
-        libsvm_formatter.trainLibSvm(config["trainingLibraryLocation"],config["trainingLibraryOptions"],config["trainingFile"],config["trainedModelFile"])
+        libsvm_formatter.trainLibSvm(config["trainingLibraryLocation"], config["trainingLibraryOptions"], config["trainingFile"], config["trainedModelFile"])
 
         print("Converting trained model ("+config["trainedModelFile"]+") to solr model ("+config["solrModelFile"]+")")
         formatter.convertLibSvmModelToLtrModel(config["trainedModelFile"], config["solrModelFile"], config["solrModelName"], config["solrFeatureStoreName"])
