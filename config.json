@@ -1,17 +1,17 @@
 {
   "host":                     "localhost",
-  "port":                     8988,
-  "collection":               "techproducts",
+  "port":                     8981,
+  "collection":               "JapanDocs",
   "requestHandler":           "query",
   "q":                        "*:*",
   "efiParams":                "efi.user_query='$USERQUERY'",
   "userQueriesFile":          "user_queries.txt",
   "trainingFile":             "exampleTrainingFile.txt",
   "trainedModelFile":         "exampleTrainedModel.txt",
-  "trainingLibraryLocation":   "C:/Codes/PythonCode/TestSolrLTR/venv/Scripts/liblinear.exe",
-  "trainingLibraryOptions":   "C:/Codes/PythonCode/TestSolrLTR/venv/lib/site-packages/liblinear/__init__.py",
-  "solrFeatureStoreName":     "exampleFeatureStore",
+  "trainingLibraryLocation":   "C:/Codes/PythonCode/TestSolrLTR/venv/Scripts/train.exe",
+  "trainingLibraryOptions":   "C:/Codes/PythonCode/TestSolrLTR/venv/lib/site-packages/liblinear/liblinear.py",
+  "solrFeatureStoreName":     "JapanDocFeatureStore",
   "solrFeaturesFile":         "exampleFeatures.json",
   "solrModelFile":            "exampleModel.json",
-  "solrModelName":            "exampleModel"
+  "solrModelName":            "JapanDocModel"
 }

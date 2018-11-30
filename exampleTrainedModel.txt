@@ -1,0 +1,37 @@
+{
+	"class":"org.apache.solr.ltr.model.LinearModel",
+	"store": "JapanDocFeatureStore",
+	"name": "JapanDocModel",
+	"features": [
+		{ "name":"content"},
+		{ "name":"lnsubstringbody2g"},
+		{ "name":"titles"},
+		{ "name":"lnsubstringdoctitles2g"},
+		{ "name":"lnjabstract"},
+		{ "name":"lnsubcontentformat"},
+		{ "name":"docdatetime"},
+		{ "name":"lnexpdate"},
+		{ "name":"lncontenttype"},
+		{ "name":"lndocsourceid"},
+		{ "name":"lnpackageid"},
+		{ "name":"lndocumentclass"},
+		{ "name":"lndoctype"}
+		],
+		"params": 	{
+		    "weights": {
+			    "content":0.2,
+			    "lnsubstringbody2g":0.2,
+			    "titles":0.1,
+			    "lnsubstringdoctitles2g":0.1,
+			    "lnjabstract":0.1,
+			    "lnsubcontentformat":0.1,
+			    "docdatetime":0.1,
+			    "lnexpdate":0.1,
+			    "lncontenttype":0.1,
+			    "lndocsourceid":0.1,
+			    "lnpackageid":0.1,
+			    "lndocumentclass":0.1,
+			    "lndoctype":0.1
+		}
+	}
+}

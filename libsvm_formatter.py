@@ -14,6 +14,7 @@ class LibSvmFormatter:
             self.featureNameToId  = {}
             self.featureIdToName = {}
             self.curFeatIndex = 1
+            self.features = {}
             curListOfFv = []
             curQueryAndSource = ""
             for query, docId, relevance, source, featureVector in docClickInfo:
@@ -30,9 +31,11 @@ class LibSvmFormatter:
         Where key is now an integer. libSVM requires the key to be an integer but not all libraries have
         this requirement.'''
         features = {}
+      #  print(featureVector)
         for keyValuePairStr in featureVector:
             featName, featValue = keyValuePairStr.split("=")
             features[self._getFeatureId(featName)] = float(featValue)
+       # print(features)
         return features
 
     def _getFeatureId(self, key):
@@ -41,6 +44,14 @@ class LibSvmFormatter:
                 self.featureIdToName[self.curFeatIndex] = key
                 self.curFeatIndex += 1
         return self.featureNameToId[key]
+
+    #def testfeature(self,features):
+     #   with open(features, encoding="utf-8") as input:
+     #       solrQueryUrls = []  # A list of tuples with solrQueryUrl,solrQuery,docId,scoreForPQ,source
+      #      # print(userQueriesFile)
+      #      for line in input:
+       #         linef = line.strip()
+       #         print(linef)
 
     def convertLibSvmModelToLtrModel(self, libSvmModelLocation, outputFile, modelName, featureStoreName):
         with open(libSvmModelLocation, 'r') as inFile:
@@ -54,17 +65,19 @@ class LibSvmFormatter:
                 for featKey in self.featureNameToId.keys():
                     convertedOutFile.write('\t\t{ "name":"' + featKey + '"}' if isFirst else ',\n\t\t{ "name":"' + featKey + '"}')
                     isFirst = False
-                convertedOutFile.write("\n\t],\n")
-                convertedOutFile.write('\t"params": {\n\t\t"weights": {\n')
-                isFirst = True
-                for featKey in self.featureNameToId.keys():
-                    convertedOutFile.write('\t\t\t"' + featKey + '":1.0' if isFirst else ',\n\t\t\t"' + featKey + '":1.0')
-                    isFirst = False
+                convertedOutFile.write("\n\t\t],\n\t")
+                convertedOutFile.write('\t"params": {')
+                convertedOutFile.write('\n\t\t\t"weights": {\n')
+                #isFirst = True
+                #for featKey in self.featureNameToId.keys():
+               #     convertedOutFile.write('\t\t\t"' + featKey + '":0.1' if isFirst else ',\n\t\t\t"' + featKey + '":0.1')
+                #    isFirst = False
 
                 startReading = False
                 isFirst = True
                 counter = 1
                 for line in inFile:
+
                     if startReading:
                         newParamVal = float(line.strip())
                         if not isFirst:
@@ -90,6 +103,8 @@ def _writeRankSVMPairs(listOfFeatures, output):
     '''
     for d1 in range(0, len(listOfFeatures)):
         for d2 in range(d1+1, len(listOfFeatures)):
+          #  print(listOfFeatures[d1])
+           # print(listOfFeatures[d2])
             doc1, doc2 = listOfFeatures[d1], listOfFeatures[d2]
             fv1, fv2 = doc1[1], doc2[1]
             d1Relevance, d2Relevance = float(doc1[0]), float(doc2[0])
