@@ -1,0 +1,19 @@
+{
+	"class":"org.apache.solr.ltr.model.LinearModel",
+	"store": "exampleFeatureStore",
+	"name": "exampleModel",
+	"features": [
+		{ "name":"isInStock"},
+		{ "name":"originalScore"},
+		{ "name":"price"},
+		{ "name":"productNameMatchQuery"}
+	],
+	"params": {
+		"weights": {
+			"isInStock":1.0,
+			"originalScore":1.0,
+			"price":1.0,
+			"productNameMatchQuery":1.0
+		}
+	}
+}

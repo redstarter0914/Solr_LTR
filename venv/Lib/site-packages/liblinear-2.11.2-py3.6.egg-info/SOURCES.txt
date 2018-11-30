@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+liblinear/__init__.py
+liblinear.egg-info/PKG-INFO
+liblinear.egg-info/SOURCES.txt
+liblinear.egg-info/dependency_links.txt
+liblinear.egg-info/entry_points.txt
+liblinear.egg-info/requires.txt
+liblinear.egg-info/top_level.txt

@@ -1,0 +1,3 @@
+[console_scripts]
+liblinear = liblinear:main
+

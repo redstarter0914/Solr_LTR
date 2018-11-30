@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: liblinear
+Version: 2.11.2
+Summary: Python bindings for liblinear
+Home-page: https://github.com/sio2boss/liblinear
+Author: sio2boss
+Author-email: sio2boss@hotmail.com
+License: UNKNOWN
+Download-URL: https://github.com/sio2boss/liblinear/tarball/2.11.2
+Description: UNKNOWN
+Keywords: liblinear
+Platform: UNKNOWN
