@@ -18,7 +18,6 @@ def setupSolr(collection, host, port, featuresFile, featureStoreName):
 
     baseUrl = "/solr/" + collection
     featureUrl = baseUrl + "/schema/feature-store"
-
     conn.request("DELETE", featureUrl+"/"+featureStoreName)
     r = conn.getresponse()
    # print(r.status)
@@ -41,8 +40,7 @@ def setupSolr(collection, host, port, featuresFile, featureStoreName):
     #print(r.status)
     msg = r.read()
     #print(msg)
-    if (r.status != http.client.OK and
-        r.status != http.client.ACCEPTED):
+    if (r.status != http.client.OK and r.status != http.client.ACCEPTED):
         #print(r.status)
         #print("")
         #print(r.reason)
@@ -100,7 +98,7 @@ def generateTrainingData(solrQueries, host, port):
         for queryUrl, query, docId, score, source in solrQueries:
             conn.request("GET", queryUrl, headers=headers)
             r = conn.getresponse()
-           # print(queryUrl)
+            #print(queryUrl)
             msg = r.read()
             msgDict = json.loads(msg)
 
@@ -110,7 +108,7 @@ def generateTrainingData(solrQueries, host, port):
             if len(docs) > 0 and "[features]" in docs[0]:
                 if not msgDict['response']['docs'][0]["[features]"] == None:
                     fv = msgDict['response']['docs'][0]["[features]"]
-                   # print(fv)
+                    #print(fv)
                 else:
                     print("ERROR NULL FV FOR: " + docId)
                     print(msg)
@@ -138,8 +136,7 @@ def uploadModel(collection, host, port, modelFile, modelName):
     headers = {'Content-type': 'application/json'}
     with open(modelFile) as modelBody:
         conn = http.client.HTTPConnection(host, port)
-
-        conn.request("DELETE", modelUrl+"/"+modelName)
+        conn.request("DELETE", modelUrl + "/" + modelName)
         r = conn.getresponse()
         msg = r.read()
        # print(modelUrl)

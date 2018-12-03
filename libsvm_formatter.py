@@ -14,7 +14,7 @@ class LibSvmFormatter:
             self.featureNameToId  = {}
             self.featureIdToName = {}
             self.curFeatIndex = 1
-            self.features = {}
+            self.featurels = {}
             curListOfFv = []
             curQueryAndSource = ""
             for query, docId, relevance, source, featureVector in docClickInfo:
@@ -23,6 +23,7 @@ class LibSvmFormatter:
                     _writeRankSVMPairs(curListOfFv, output)
                     curListOfFv = []
                     curQueryAndSource = query + source
+
                 curListOfFv.append((relevance, self._makeFeaturesMap(featureVector)))
             _writeRankSVMPairs(curListOfFv, output) #This catches the last list of comparisons
 
@@ -35,7 +36,10 @@ class LibSvmFormatter:
         for keyValuePairStr in featureVector:
             featName, featValue = keyValuePairStr.split("=")
             features[self._getFeatureId(featName)] = float(featValue)
-       # print(features)
+            self.featurels[featName] = float(featValue)
+        #print(features)
+        #self.featurels=features
+        #print(self.featurels)
         return features
 
     def _getFeatureId(self, key):
@@ -68,10 +72,19 @@ class LibSvmFormatter:
                 convertedOutFile.write("\n\t\t],\n\t")
                 convertedOutFile.write('\t"params": {')
                 convertedOutFile.write('\n\t\t\t"weights": {\n')
-                #isFirst = True
+                #print(self.featurels)
+                flist=self.featurels
+                isFirst = True
+                for f in flist:
+                    vstr = str(flist[f])
+                    if isFirst:
+                        convertedOutFile.write('\t\t\t\t"' + f + '":' + vstr)
+                    else:
+                        convertedOutFile.write(',\n\t\t\t\t"' + f + '":' + vstr)
+                    isFirst = False
                 #for featKey in self.featureNameToId.keys():
-               #     convertedOutFile.write('\t\t\t"' + featKey + '":0.1' if isFirst else ',\n\t\t\t"' + featKey + '":0.1')
-                #    isFirst = False
+                    #convertedOutFile.write('\t\t\t\t"' + featKey + '":0.1' if isFirst else ',\n\t\t\t\t"' + featKey + '":0.1')
+                    #isFirst = False
 
                 startReading = False
                 isFirst = True

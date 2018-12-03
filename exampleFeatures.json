@@ -1,21 +1,9 @@
 [
   {
     "store" : "JapanDocFeatureStore",
-    "name" : "content",
-    "class" : "org.apache.solr.ltr.feature.SolrFeature",
-    "params" : { "q" : "{!field f=content}${user_query}" }
-  },
-  {
-    "store" : "JapanDocFeatureStore",
     "name" : "lnsubstringbody2g",
     "class" : "org.apache.solr.ltr.feature.SolrFeature",
     "params" : { "q" : "{!field f=lnsubstringbody2g}${user_query}" }
-  },
-  {
-    "store" : "JapanDocFeatureStore",
-    "name" : "titles",
-    "class" : "org.apache.solr.ltr.feature.SolrFeature",
-    "params" : { "q" : "{!field f=titles}${user_query}" }
   },
   {
     "store" : "JapanDocFeatureStore",
@@ -30,50 +18,25 @@
     "params" : { "q" : "{!field f=lnjabstract}${user_query}" }
   },
   {
-    "store" : "JapanDocFeatureStore",
-    "name" : "lnsubcontentformat",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "lnsubcontentformat" }
-  },
-   {
-    "store" : "JapanDocFeatureStore",
+     "store" : "JapanDocFeatureStore",
     "name" : "docdatetime",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "docdatetime" }
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "{!func}recip(ms(NOW,docdatetime), 3.16e-11, 1, 1)"
+    }
   },
-   {
-    "store" : "JapanDocFeatureStore",
+  {
+     "store" : "JapanDocFeatureStore",
     "name" : "lnexpdate",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "lnexpdate" }
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "{!func}recip(ms(NOW,lnexpdate), 3.16e-11, 1, 1)"
+    }
   },
   {
     "store" : "JapanDocFeatureStore",
-    "name" : "lncontenttype",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "lncontenttype" }
-  },
-  {
-    "store" : "JapanDocFeatureStore",
-    "name" : "lndocsourceid",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "lndocsourceid" }
-  },
-  {
-    "store" : "JapanDocFeatureStore",
-    "name" : "lnpackageid",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "lnpackageid" }
-  },  {
-    "store" : "JapanDocFeatureStore",
-    "name" : "lndocumentclass",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "lndocumentclass" }
-  },
-  {
-    "store" : "JapanDocFeatureStore",
-    "name" : "lndoctype",
-    "class" : "org.apache.solr.ltr.feature.FieldValueFeature",
-    "params" : { "field" : "lndoctype" }
+    "name" : "originalScore",
+    "class" : "org.apache.solr.ltr.feature.OriginalScoreFeature",
+    "params" : {}
   }
 ]

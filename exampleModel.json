@@ -3,23 +3,21 @@
 	"store": "JapanDocFeatureStore",
 	"name": "JapanDocModel",
 	"features": [
-		{ "name":"content"},
 		{ "name":"lnsubstringbody2g"},
-		{ "name":"titles"},
 		{ "name":"lnsubstringdoctitles2g"},
 		{ "name":"lnjabstract"},
-		{ "name":"lnsubcontentformat"},
 		{ "name":"docdatetime"},
 		{ "name":"lnexpdate"},
-		{ "name":"lncontenttype"},
-		{ "name":"lndocsourceid"},
-		{ "name":"lnpackageid"},
-		{ "name":"lndocumentclass"},
-		{ "name":"lndoctype"}
+		{ "name":"originalScore"}
 		],
 		"params": {
 			"weights": {
-
+				"lnsubstringbody2g":0.0,
+				"lnsubstringdoctitles2g":0.0,
+				"lnjabstract":0.0,
+				"docdatetime":0.8200979,
+				"lnexpdate":-0.00012567974,
+				"originalScore":4.158883
 		}
 	}
 }
