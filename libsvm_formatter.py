@@ -32,17 +32,22 @@ class LibSvmFormatter:
         Where key is now an integer. libSVM requires the key to be an integer but not all libraries have
         this requirement.'''
         features = {}
-      #  print(featureVector)
+        #print(featureVector)
         for keyValuePairStr in featureVector:
-            featName, featValue = keyValuePairStr.split("=")
-            features[self._getFeatureId(featName)] = float(featValue)
-            self.featurels[featName] = float(featValue)
+            if len(keyValuePairStr):
+                featName, featValue = keyValuePairStr.split("=")
+                features[self._getFeatureId(featName)] = float(featValue)
+                self.featurels[featName] = float(featValue)
+            else:
+                print(1111111)
         #print(features)
         #self.featurels=features
-        #print(self.featurels)
+       # print(self.featurels)
         return features
 
     def _getFeatureId(self, key):
+        #self.featureNameToId = {}
+        #self.featureIdToName = {}
         if key not in self.featureNameToId:
                 self.featureNameToId[key] = self.curFeatIndex
                 self.featureIdToName[self.curFeatIndex] = key
@@ -73,7 +78,7 @@ class LibSvmFormatter:
                 convertedOutFile.write('\t"params": {')
                 convertedOutFile.write('\n\t\t\t"weights": {\n')
                 #print(self.featurels)
-                flist=self.featurels
+                flist = self.featurels
                 isFirst = True
                 for f in flist:
                     vstr = str(flist[f])
@@ -114,6 +119,8 @@ def _writeRankSVMPairs(listOfFeatures, output):
       (1, {1:0.1, 2:0.9, 6:0.1})
     ]
     '''
+
+    #print(listOfFeatures)
     for d1 in range(0, len(listOfFeatures)):
         for d2 in range(d1+1, len(listOfFeatures)):
           #  print(listOfFeatures[d1])
@@ -121,7 +128,8 @@ def _writeRankSVMPairs(listOfFeatures, output):
             doc1, doc2 = listOfFeatures[d1], listOfFeatures[d2]
             fv1, fv2 = doc1[1], doc2[1]
             d1Relevance, d2Relevance = float(doc1[0]), float(doc2[0])
-            if  d1Relevance - d2Relevance > PAIRWISE_THRESHOLD:#d1Relevance > d2Relevance
+            outputLibSvmLine("0", subtractFvMap(fv1, fv2), output)
+            if d1Relevance - d2Relevance > PAIRWISE_THRESHOLD:#d1Relevance > d2Relevance
                 outputLibSvmLine("+1", subtractFvMap(fv1, fv2), output)
                 outputLibSvmLine("-1", subtractFvMap(fv2, fv1), output)
             elif d1Relevance - d2Relevance < -PAIRWISE_THRESHOLD: #d1Relevance < d2Relevance:

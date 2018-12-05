@@ -15,12 +15,14 @@ def setupSolr(collection, host, port, featuresFile, featureStoreName):
     '''Sets up solr with the proper features for the test'''
 
     conn = http.client.HTTPConnection(host, port)
-
     baseUrl = "/solr/" + collection
     featureUrl = baseUrl + "/schema/feature-store"
-    conn.request("DELETE", featureUrl+"/"+featureStoreName)
+    #conn.request("DELETE", featureUrl+"/JapanDocFeatureStore")
+    #r1 = conn.getresponse()
+
+    conn.request("DELETE", featureUrl + "/" + featureStoreName)
     r = conn.getresponse()
-   # print(r.status)
+    #print(44444444)
     msg = r.read()
     if (r.status != http.client.OK and
        r.status != http.client.CREATED and
@@ -28,16 +30,15 @@ def setupSolr(collection, host, port, featuresFile, featureStoreName):
        r.status != http.client.NOT_FOUND):
        raise Exception("Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
 
-
     # Add features
     headers = {'Content-type': 'application/json'}
     featuresBody = open(featuresFile)
-
+    #print(5555555)
     conn.request("POST", featureUrl, featuresBody, headers)
    # print(featureUrl)
    # print(featuresBody)
     r = conn.getresponse()
-    #print(r.status)
+    #print(66666666)
     msg = r.read()
     #print(msg)
     if (r.status != http.client.OK and r.status != http.client.ACCEPTED):
@@ -60,7 +61,7 @@ def generateQueries(userQueriesFile, collection, requestHandler, solrFeatureStor
               #  print(line)
                 solrQuery = generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId)
                 solrQueryUrls.append((solrQuery, searchText, docId, score, source))
-
+        #print(solrQueryUrls)
         return solrQueryUrls
 
 
@@ -101,7 +102,7 @@ def generateTrainingData(solrQueries, host, port):
             #print(queryUrl)
             msg = r.read()
             msgDict = json.loads(msg)
-
+            #print(msgDict)
             #print("Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
             fv = ""
             docs = msgDict['response']['docs']
@@ -132,14 +133,24 @@ def generateTrainingData(solrQueries, host, port):
 
 
 def uploadModel(collection, host, port, modelFile, modelName):
+    #headers = {'Content-type': 'application/json'}
+    #featuresBody = open(featuresFile)
+
     modelUrl = "/solr/" + collection + "/schema/model-store"
     headers = {'Content-type': 'application/json'}
     with open(modelFile) as modelBody:
         conn = http.client.HTTPConnection(host, port)
+        #print(11111111)
+        #conn.request("DELETE", modelUrl + "/JapanDocModel")
+        #r1 = conn.getresponse()
+        #msg1 = r1.read()
+        #print(modelName)
+        #print(r1.status)
         conn.request("DELETE", modelUrl + "/" + modelName)
         r = conn.getresponse()
         msg = r.read()
-       # print(modelUrl)
+        #print(333333)
+        print(r.status)
         if (r.status != http.client.OK and
             r.status != http.client.CREATED and
             r.status != http.client.ACCEPTED and
@@ -148,6 +159,8 @@ def uploadModel(collection, host, port, modelFile, modelName):
 
         conn.request("POST", modelUrl, modelBody, headers)
         r = conn.getresponse()
+        #print(r.status)
+        #print(modelBody)
         msg = r.read()
         if (r.status != http.client.OK and
             r.status != http.client.CREATED and

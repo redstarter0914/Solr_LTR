@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="642bd097-09f8-4f7a-afc9-a2b051f76fa5" name="Default Changelist" comment="update model  weights">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="642bd097-09f8-4f7a-afc9-a2b051f76fa5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleFeatures.json" beforeDir="false" afterPath="$PROJECT_DIR$/exampleFeatures.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exampleModel.json" beforeDir="false" afterPath="$PROJECT_DIR$/exampleModel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleTrainedModel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exampleTrainedModel.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exampleTrainingFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exampleTrainingFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleTrainingFile111.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exampleTrainingFile111.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libsvm_formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/libsvm_formatter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train_and_upload_demo_model1.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_and_upload_demo_model1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_queries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user_queries.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Solr_LTR$train_and_upload_demo_model1.coverage" NAME="train_and_upload_demo_model1 Coverage Results" MODIFIED="1543823289741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Solr_LTR$train_and_upload_demo_model1.coverage" NAME="train_and_upload_demo_model1 Coverage Results" MODIFIED="1543828095781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TestSolrLTR$train_and_upload_demo_model1.coverage" NAME="train_and_upload_demo_model1 Coverage Results" MODIFIED="1542699054052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -80,52 +79,55 @@
     <session id="1644122860">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="json" value="64" />
-          <entry key="py" value="839" />
-          <entry key="txt" value="18" />
+          <entry key="json" value="124" />
+          <entry key="py" value="1253" />
+          <entry key="txt" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="64" />
-          <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Python" value="839" />
+          <entry key="JSON" value="124" />
+          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="Python" value="1253" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="6" />
+          <entry key="cfg" value="1" />
+          <entry key="json" value="15" />
           <entry key="md" value="1" />
-          <entry key="py" value="2" />
-          <entry key="txt" value="14" />
+          <entry key="py" value="8" />
+          <entry key="txt" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="6" />
+          <entry key="Ini" value="1" />
+          <entry key="JSON" value="15" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="2" />
+          <entry key="PLAIN_TEXT" value="35" />
+          <entry key="Python" value="8" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="192" column="39" lean-forward="true" selection-start-line="192" selection-start-column="39" selection-end-line="192" selection-end-column="39" />
+            <state relative-caret-position="-136">
+              <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
               </folding>
@@ -134,64 +136,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_queries.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exampleTrainedModel.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exampleFeatures.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="37" column="27" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libsvm_formatter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1431">
-              <caret line="59" column="62" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="62" />
+            <state relative-caret-position="141">
+              <caret line="130" column="34" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <marker date="1543818450910" expanded="true" signature="2611:2617" ph="..." />
+                <marker date="1543995197206" expanded="true" signature="2779:2785" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exampleTrainingFile.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-612">
-              <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -199,8 +151,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exampleModel.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="221">
+              <caret line="13" column="20" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exampleTrainingFile.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="4" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/exampleFeatures.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -226,19 +196,23 @@
       <find>userQueriesFile</find>
       <find>yield</find>
       <find>featureIdToName</find>
-      <find>_getFeatureId</find>
       <find>_makeFeaturesMap</find>
       <find>_writeRankSVMPairs</find>
       <find>trainedModelFileNameconvertLibSvmModelToLtrModel</find>
       <find>train</find>
-      <find>generateQueries</find>
-      <find>generateTrainingData</find>
       <find>LibSvmFormatter</find>
-      <find>processQueryDocFeatureVector</find>
       <find>fv</find>
       <find>convertLibSvmModelToLtrModel</find>
       <find>trainLibSvm</find>
       <find>uploadModel</find>
+      <find>featureNameToId</find>
+      <find>_getFeatureId</find>
+      <find>generateTrainingData</find>
+      <find>generateHttpRequest</find>
+      <find>trainingFile</find>
+      <find>processQueryDocFeatureVector</find>
+      <find>PAIRWISE_THRESHOLD</find>
+      <find>generateQueries</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Codes\PythonCode\TestSolrLTR\venv\Lib\site-packages\liblinear-2.11.2-py3.6.egg-info</dir>
@@ -253,14 +227,15 @@
       <list>
         <option value="$PROJECT_DIR$/libsvm_formatter1.py" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/user_queries.txt" />
-        <option value="$PROJECT_DIR$/libsvm_formatter.py" />
+        <option value="$PROJECT_DIR$/exampleTrainingFile111.txt" />
         <option value="$PROJECT_DIR$/exampleFeatures.json" />
-        <option value="$PROJECT_DIR$/train_and_upload_demo_model1.py" />
         <option value="$PROJECT_DIR$/exampleTrainedModel.txt" />
+        <option value="$PROJECT_DIR$/user_queries.txt" />
         <option value="$PROJECT_DIR$/exampleModel.json" />
+        <option value="$PROJECT_DIR$/train_and_upload_demo_model1.py" />
+        <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/exampleTrainingFile.txt" />
+        <option value="$PROJECT_DIR$/libsvm_formatter.py" />
       </list>
     </option>
   </component>
@@ -282,6 +257,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,11 +265,14 @@
               <item name="Solr_LTR" type="b2602c69:ProjectViewProjectNode" />
               <item name="Solr_LTR" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Solr_LTR" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543548080987</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update model and feature">
+      <created>1543825489374</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1543825489374</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -411,51 +397,28 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19818456" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20121029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924356" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.32786885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32786885" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4977307" weight="0.32786885" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50226927" side_tool="true" weight="0.3409836" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4977307" visible="true" weight="0.3409836" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32786885" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.505295" side_tool="true" weight="0.3409836" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.494705" visible="true" weight="0.3409836" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32970452" />
       <window_info anchor="right" id="Database" order="4" weight="0.32970452" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17927383" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49924356" visible="true" weight="0.26065573" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50075644" side_tool="true" weight="0.29508197" />
-      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="5" weight="0.32851985" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32851985" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.32786885" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.32851985" />
-      <window_info anchor="right" id="Database" order="0" weight="0.32970452" />
-      <window_info anchor="right" id="SciView" order="1" weight="0.32970452" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -467,7 +430,8 @@
     <MESSAGE value="update JapanDocs" />
     <MESSAGE value="update JapanDocsssss" />
     <MESSAGE value="update model  weights" />
-    <option name="LAST_COMMIT_MESSAGE" value="update model  weights" />
+    <MESSAGE value="update model and feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="update model and feature" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/libsvm_formatter1.py" />
@@ -493,72 +457,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/_pytest/mark/structures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1414" />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/_pytest/mark/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/_pytest/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/_csv.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../TestSolrLTR/venv/pyvenv.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../TestSolrLTR/venv/pip-selfcheck.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/exampleTrainingFile111.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exampleFeatures.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exampleModel.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libsvm_formatter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1431">
-          <caret line="59" column="62" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-            <marker date="1543818450910" expanded="true" signature="2611:2617" ph="..." />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exampleTrainedModel.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exampleTrainingFile.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user_queries.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="51">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libsvm_formatter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="130" column="34" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1543995197206" expanded="true" signature="2779:2785" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exampleModel.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exampleTrainingFile.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="4" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="192" column="39" lean-forward="true" selection-start-line="192" selection-start-column="39" selection-end-line="192" selection-end-column="39" />
+        <state relative-caret-position="-136">
+          <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
           <folding>
             <element signature="e#23#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exampleFeatures.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
         </state>
       </provider>
     </entry>
