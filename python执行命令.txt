@@ -1,0 +1,3 @@
+ 
+python.exe train_and_upload_demo_model1.py -c config.json
+
