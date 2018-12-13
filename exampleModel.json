@@ -1,11 +1,9 @@
 {
 	"class":"org.apache.solr.ltr.model.LinearModel",
-	"store": "JapanDocFeatureStore",
-	"name": "JapanDocModel",
+	"store": "JapanDocFeatureStoreBody",
+	"name": "JapanDocModelBody",
 	"features": [
 		{ "name":"lnsubstringbody2g"},
-		{ "name":"lnsubstringdoctitles2g"},
-		{ "name":"lnjabstract"},
 		{ "name":"docdatetime"},
 		{ "name":"lnexpdate"},
 		{ "name":"originalScore"}
@@ -13,11 +11,9 @@
 		"params": {
 			"weights": {
 				"lnsubstringbody2g":0.0,
-				"lnsubstringdoctitles2g":0.0,
-				"lnjabstract":0.0,
-				"docdatetime":0.3708733,
-				"lnexpdate":-0.00012567983,
-				"originalScore":4.529009
+				"docdatetime":0.28335965,
+				"lnexpdate":-0.00012566449,
+				"originalScore":6.80017
 		}
 	}
 }

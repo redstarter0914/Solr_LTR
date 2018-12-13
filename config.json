@@ -1,17 +1,18 @@
 {
   "host":                     "localhost",
-  "port":                     8981,
+  "port":                     8984,
   "collection":               "JapanDocs",
   "requestHandler":           "query",
   "q":                        "*:*",
   "efiParams":                "efi.user_query='$USERQUERY'",
-  "userQueriesFile":          "user_queries.txt",
+  "userQueriesFile":          "ExportScoreData.xlsx",
+  "userQueriesFilePath":          "ExpertData",
   "trainingFile":             "exampleTrainingFile.txt",
   "trainedModelFile":         "exampleTrainedModel.txt",
   "trainingLibraryLocation":   "C:/Codes/PythonCode/TestSolrLTR/venv/Scripts/train.exe",
   "trainingLibraryOptions":   "C:/Codes/PythonCode/TestSolrLTR/venv/lib/site-packages/liblinear/liblinear.py",
-  "solrFeatureStoreName":     "JapanDocFeatureStore",
+  "solrFeatureStoreName":     "JapanDocFeatureStoreBody",
   "solrFeaturesFile":         "exampleFeatures.json",
   "solrModelFile":            "exampleModel.json",
-  "solrModelName":            "JapanDocModel"
+  "solrModelName":            "JapanDocModelBody"
 }

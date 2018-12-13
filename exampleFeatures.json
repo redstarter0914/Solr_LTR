@@ -1,24 +1,14 @@
 [
   {
-    "store" : "JapanDocFeatureStore",
+    "store" : "JapanDocFeatureStoreBody",
     "name" : "lnsubstringbody2g",
     "class" : "org.apache.solr.ltr.feature.SolrFeature",
-    "params" : { "q" : "{!field f=lnsubstringbody2g}${user_query}" }
+    "params" : {
+      "fq": ["{!type=edismax qf=*text* v=$qq}&qq=\"${user_query}\""]
+    }
   },
   {
-    "store" : "JapanDocFeatureStore",
-    "name" : "lnsubstringdoctitles2g",
-    "class" : "org.apache.solr.ltr.feature.SolrFeature",
-    "params" : { "q" : "{!field f=lnsubstringdoctitles2g}${user_query}" }
-  },
-  {
-    "store" : "JapanDocFeatureStore",
-    "name" : "lnjabstract",
-    "class" : "org.apache.solr.ltr.feature.SolrFeature",
-    "params" : { "q" : "{!field f=lnjabstract}${user_query}" }
-  },
-  {
-     "store" : "JapanDocFeatureStore",
+     "store" : "JapanDocFeatureStoreBody",
     "name" : "docdatetime",
     "class" : "org.apache.solr.ltr.feature.SolrFeature",
     "params" : {
@@ -26,7 +16,7 @@
     }
   },
   {
-     "store" : "JapanDocFeatureStore",
+     "store" : "JapanDocFeatureStoreBody",
     "name" : "lnexpdate",
     "class" : "org.apache.solr.ltr.feature.SolrFeature",
     "params" : {
@@ -34,7 +24,7 @@
     }
   },
   {
-    "store" : "JapanDocFeatureStore",
+    "store" : "JapanDocFeatureStoreBody",
     "name" : "originalScore",
     "class" : "org.apache.solr.ltr.feature.OriginalScoreFeature",
     "params" : {}

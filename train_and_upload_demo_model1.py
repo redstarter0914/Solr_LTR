@@ -5,10 +5,22 @@ import json
 import http.client
 import urllib
 import libsvm_formatter
-
+import OperationFile
 from optparse import OptionParser
+import xlrd
 
 solrQueryUrl = ""
+
+def open_excel(userQueriesFile):
+    data = xlrd.open_workbook(userQueriesFile)
+    table = data.sheet_by_name("ExportScoreData")
+    nrows = table.nrows  # 行数
+    list = []  # 装读取结果的序列
+    for rownum in range(1, nrows):  # 遍历每一行的内容
+        row = table.row_values(rownum)  # 根据行号获取行
+        if row:  # 如果行存在
+            list.append(row)  # 装载数据
+    return list
 
 
 def setupSolr(collection, host, port, featuresFile, featureStoreName):
@@ -65,6 +77,26 @@ def generateQueries(userQueriesFile, collection, requestHandler, solrFeatureStor
         return solrQueryUrls
 
 
+def generateQueriesExcel(userQueriesFile, collection, requestHandler, solrFeatureStoreName, efiParams):
+    solrQueryUrls = []  # A list of tuples with solrQueryUrl,solrQuery,docId,scoreForPQ,source
+    datalst = open_excel(userQueriesFile)
+    #print(datalst)
+    for searchText, docId, score, source in datalst:
+        solrQuery = generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId)
+        solrQueryUrls.append((solrQuery, searchText, docId, score, source))
+    #print(solrQueryUrls)
+    return solrQueryUrls
+
+
+def generateQueriesExcelData(UserQueriesFiles,collection, requestHandler, solrFeatureStoreName, efiParams):
+    solrQueryUrls = []
+    for searchText, docId, score, source in UserQueriesFiles:
+        solrQuery = generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId)
+        solrQueryUrls.append((solrQuery, searchText, docId, score, source))
+        # print(solrQueryUrls)
+    return solrQueryUrls
+
+
 def generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId):
     global solrQueryUrl
     if len(solrQueryUrl) < 1:
@@ -74,15 +106,12 @@ def generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiPar
        # print(solrQueryUrl)
         solrQueryUrl += "&q="
         solrQueryUrl = solrQueryUrl.replace(" ", "+")
-        #print(solrQueryUrl)
         solrQueryUrl += urllib.parse.quote_plus("id:")
-
         #print(solrQueryUrl)
-
     userQuery = urllib.parse.quote_plus(searchText.strip().replace("'", "\\'").replace("/", "\\\\/"))
     solrQuery = solrQueryUrl + '"' + urllib.parse.quote_plus(docId) + '"' #+ solrQueryUrlEnd
     solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', urllib.parse.quote_plus("\\'" + userQuery +"\\'"))
-    #print(solrQueryUrl)
+    print(solrQuery)
     return solrQuery
 
 
@@ -91,7 +120,6 @@ def generateTrainingData(solrQueries, host, port):
     Feature Vector is a list of strings of form "key=value"'''
     conn = http.client.HTTPConnection(host, port)
     headers = {"Connection": " keep-alive"}
-
     #print(solrQueries)
     #print(host)
    #print(port)
@@ -140,7 +168,6 @@ def uploadModel(collection, host, port, modelFile, modelName):
     headers = {'Content-type': 'application/json'}
     with open(modelFile) as modelBody:
         conn = http.client.HTTPConnection(host, port)
-        #print(11111111)
         #conn.request("DELETE", modelUrl + "/JapanDocModel")
         #r1 = conn.getresponse()
         #msg1 = r1.read()
@@ -149,7 +176,6 @@ def uploadModel(collection, host, port, modelFile, modelName):
         conn.request("DELETE", modelUrl + "/" + modelName)
         r = conn.getresponse()
         msg = r.read()
-        #print(333333)
         print(r.status)
         if (r.status != http.client.OK and
             r.status != http.client.CREATED and
@@ -171,7 +197,6 @@ def uploadModel(collection, host, port, modelFile, modelName):
 def main(argv=None):
     if argv is None:
         argv = sys.argv
-
     parser = OptionParser(usage="usage: %prog [options] ", version="%prog 1.0")
     parser.add_option('-c', '--config',
                       dest='configFile',
@@ -188,8 +213,15 @@ def main(argv=None):
         print("Uploading features ("+config["solrFeaturesFile"]+") to Solr")
         setupSolr(config["collection"], config["host"], config["port"], config["solrFeaturesFile"], config["solrFeatureStoreName"])
 
-        print("Converting user queries ("+config["userQueriesFile"]+") into Solr queries for feature extraction")
-        reRankQueries = generateQueries(config["userQueriesFile"], config["collection"], config["requestHandler"], config["solrFeatureStoreName"], config["efiParams"])
+        #批量读取文件夹内文件
+        print("Converting querier("+config["userQueriesFilePath"]+" exchange file")
+        openlistdir = OperationFile.OperationFiles
+        filesdata = openlistdir.GetTranDataList(openlistdir, config["userQueriesFilePath"])
+        reRankQueries = generateQueriesExcelData(filesdata, config["collection"], config["requestHandler"], config["solrFeatureStoreName"], config["efiParams"])
+
+        # 单个文件读取数据
+        #print("Converting user queries ("+config["userQueriesFile"]+") into Solr queries for feature extraction")
+        #reRankQueries = generateQueriesExcel(config["userQueriesFile"], config["collection"], config["requestHandler"], config["solrFeatureStoreName"], config["efiParams"])
         #print(1)
         print("Running Solr queries to extract features")
         fvGenerator = generateTrainingData(reRankQueries, config["host"], config["port"])

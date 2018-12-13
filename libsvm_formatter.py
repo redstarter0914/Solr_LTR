@@ -46,21 +46,11 @@ class LibSvmFormatter:
         return features
 
     def _getFeatureId(self, key):
-        #self.featureNameToId = {}
-        #self.featureIdToName = {}
         if key not in self.featureNameToId:
                 self.featureNameToId[key] = self.curFeatIndex
                 self.featureIdToName[self.curFeatIndex] = key
                 self.curFeatIndex += 1
         return self.featureNameToId[key]
-
-    #def testfeature(self,features):
-     #   with open(features, encoding="utf-8") as input:
-     #       solrQueryUrls = []  # A list of tuples with solrQueryUrl,solrQuery,docId,scoreForPQ,source
-      #      # print(userQueriesFile)
-      #      for line in input:
-       #         linef = line.strip()
-       #         print(linef)
 
     def convertLibSvmModelToLtrModel(self, libSvmModelLocation, outputFile, modelName, featureStoreName):
         with open(libSvmModelLocation, 'r') as inFile:
@@ -128,7 +118,7 @@ def _writeRankSVMPairs(listOfFeatures, output):
             doc1, doc2 = listOfFeatures[d1], listOfFeatures[d2]
             fv1, fv2 = doc1[1], doc2[1]
             d1Relevance, d2Relevance = float(doc1[0]), float(doc2[0])
-            outputLibSvmLine("0", subtractFvMap(fv1, fv2), output)
+            #outputLibSvmLine("0", subtractFvMap(fv1, fv2), output)
             if d1Relevance - d2Relevance > PAIRWISE_THRESHOLD:#d1Relevance > d2Relevance
                 outputLibSvmLine("+1", subtractFvMap(fv1, fv2), output)
                 outputLibSvmLine("-1", subtractFvMap(fv2, fv1), output)
