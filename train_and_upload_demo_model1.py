@@ -35,6 +35,8 @@ def GetReRankQueries(config):
     # 批量读取文件夹内文件·
     print("3 Converting querier(" + config["userQueriesFilePath"] + " exchange file")
     openlistdir = OperationFile.OperationFiles
+
+    #单个文件读取操作
     flist = openlistdir.GetFiles(openlistdir, config["userQueriesFilePath"])
     #print(flist)
     print("------------------------START----------------------------")
@@ -44,17 +46,9 @@ def GetReRankQueries(config):
         datalst = openlistdir.open_excel(openlistdir, d)
         RunReRank(config, datalst)
 
-# print(d)
-# datalst = openlistdir.open_excel(openlistdir, d)
-# RunReRank(config, d)
+    #读取所有文件操作
     #filesdata = openlistdir.GetTranDataList(openlistdir, config["userQueriesFilePath"])
-    #print(filesdata)
     #RunReRank(config, filesdata)
-    #for d in filesdata:
-        #print(d)
-        #datalst = openlistdir.open_excel(openlistdir, d)
-        #RunReRank(config, d)
-
 
 def main(argv=None):
     if argv is None:
