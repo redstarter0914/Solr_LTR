@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="642bd097-09f8-4f7a-afc9-a2b051f76fa5" name="Default Changelist" comment="update model and feature" />
+    <list default="true" id="642bd097-09f8-4f7a-afc9-a2b051f76fa5" name="Default Changelist" comment="update model and feature">
+      <change afterPath="$PROJECT_DIR$/ExcuteSolrCommand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GenerateQueryClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OperationFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/OperationFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleModel.json" beforeDir="false" afterPath="$PROJECT_DIR$/exampleModel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exampleTrainingFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exampleTrainingFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libsvm_formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/libsvm_formatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_and_upload_demo_model1.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_and_upload_demo_model1.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,68 +80,88 @@
     <session id="1644122860">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="3" />
-          <entry key="json" value="203" />
-          <entry key="py" value="2356" />
+          <entry key="json" value="204" />
+          <entry key="py" value="3168" />
           <entry key="txt" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="203" />
+          <entry key="JSON" value="204" />
           <entry key="PLAIN_TEXT" value="67" />
-          <entry key="Python" value="2359" />
+          <entry key="Python" value="3171" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cfg" value="1" />
-          <entry key="json" value="17" />
+          <entry key="json" value="18" />
           <entry key="md" value="1" />
-          <entry key="py" value="11" />
+          <entry key="py" value="15" />
           <entry key="txt" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Ini" value="1" />
-          <entry key="JSON" value="17" />
+          <entry key="JSON" value="18" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="40" />
-          <entry key="Python" value="11" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="219" column="160" selection-start-line="219" selection-start-column="160" selection-end-line="219" selection-end-column="160" />
+            <state relative-caret-position="92">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
-                <element signature="e#206#529#0" />
-                <element signature="e#234#1482#0" />
-                <element signature="e#1593#2218#0" />
-                <element signature="e#2701#3259#0" />
-                <element signature="e#3288#3618#0" />
-                <element signature="e#4268#5903#0" />
-                <element signature="e#5973#7257#0" />
-                <marker date="1544686469148" expanded="true" signature="550:553" ph="..." />
-                <marker date="1544686469148" expanded="true" signature="3285:3625" ph="..." />
+                <marker date="1544774662968" expanded="true" signature="470:1639" ph="..." />
+                <marker date="1544774662968" expanded="true" signature="2093:2096" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GenerateQueryClass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1544775015400" expanded="true" signature="48:49" ph="..." />
+                <marker date="1544775015400" expanded="true" signature="924:929" ph="..." />
+                <marker date="1544775015400" expanded="true" signature="1567:1572" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExcuteSolrCommand.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding>
+                <element signature="e#1#12#0" expanded="true" />
+                <marker date="1544774835365" expanded="true" signature="84:3823" ph="..." />
               </folding>
             </state>
           </provider>
@@ -141,30 +170,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OperationFile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <marker date="1544686416694" expanded="true" signature="44:49" ph="..." />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exampleTrainingFile.txt">
+        <entry file="file://$PROJECT_DIR$/OperationFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
+            <state relative-caret-position="782">
+              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1544774397067" expanded="true" signature="54:59" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,19 +192,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libsvm_formatter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="275">
+              <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <element signature="e#201#1296#0" />
                 <element signature="e#1353#2089#0" />
-                <element signature="e#2133#2372#0" />
-                <element signature="e#2547#4850#0" />
                 <element signature="e#4904#6362#0" />
                 <element signature="e#6397#6859#0" />
                 <element signature="e#6912#7058#0" />
-                <element signature="e#7154#7351#0" />
-                <marker date="1544604225299" expanded="false" signature="2373:2378" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3653">
+              <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+              <folding>
+                <element signature="e#23#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,8 +229,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>urllib</find>
-      <find>liblinear</find>
       <find>trainingLibraryLocation</find>
       <find>trainingLibraryOptions</find>
       <find>listOfFeatures</find>
@@ -216,7 +241,6 @@
       <find>LibSvmFormatter</find>
       <find>fv</find>
       <find>convertLibSvmModelToLtrModel</find>
-      <find>uploadModel</find>
       <find>featureNameToId</find>
       <find>_getFeatureId</find>
       <find>generateHttpRequest</find>
@@ -229,9 +253,12 @@
       <find>generateTrainingData</find>
       <find>_writeRankSVMPairs</find>
       <find>features</find>
-      <find>trainLibSvm</find>
       <find>generateQueries</find>
       <find>subprocess</find>
+      <find>trainLibSvm</find>
+      <find>uploadModel</find>
+      <find>solrQueryUrl</find>
+      <find>solrModelFile</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Codes\PythonCode\TestSolrLTR\venv\Lib\site-packages\liblinear-2.11.2-py3.6.egg-info</dir>
@@ -249,13 +276,15 @@
         <option value="$PROJECT_DIR$/exampleTrainingFile111.txt" />
         <option value="$PROJECT_DIR$/exampleFeatures.json" />
         <option value="$PROJECT_DIR$/exampleTrainedModel.txt" />
-        <option value="$PROJECT_DIR$/exampleModel.json" />
         <option value="$PROJECT_DIR$/user_queries.txt" />
-        <option value="$PROJECT_DIR$/libsvm_formatter.py" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/OperationFile.py" />
-        <option value="$PROJECT_DIR$/train_and_upload_demo_model1.py" />
         <option value="$PROJECT_DIR$/exampleTrainingFile.txt" />
+        <option value="$PROJECT_DIR$/libsvm_formatter.py" />
+        <option value="$PROJECT_DIR$/exampleModel.json" />
+        <option value="$PROJECT_DIR$/OperationFile.py" />
+        <option value="$PROJECT_DIR$/ExcuteSolrCommand.py" />
+        <option value="$PROJECT_DIR$/GenerateQueryClass.py" />
+        <option value="$PROJECT_DIR$/train_and_upload_demo_model1.py" />
       </list>
     </option>
   </component>
@@ -422,8 +451,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.204236" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20726173" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -526,13 +556,6 @@
     <entry file="file://$PROJECT_DIR$/../../TestSolrLTR/venv/pip-selfcheck.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exampleTrainingFile111.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -557,62 +580,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exampleModel.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exampleFeatures.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="219" column="160" selection-start-line="219" selection-start-column="160" selection-end-line="219" selection-end-column="160" />
-          <folding>
-            <element signature="e#23#33#0" expanded="true" />
-            <element signature="e#206#529#0" />
-            <element signature="e#234#1482#0" />
-            <element signature="e#1593#2218#0" />
-            <element signature="e#2701#3259#0" />
-            <element signature="e#3288#3618#0" />
-            <element signature="e#4268#5903#0" />
-            <element signature="e#5973#7257#0" />
-            <marker date="1544686469148" expanded="true" signature="550:553" ph="..." />
-            <marker date="1544686469148" expanded="true" signature="3285:3625" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libsvm_formatter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#201#1296#0" />
-            <element signature="e#1353#2089#0" />
-            <element signature="e#2133#2372#0" />
-            <element signature="e#2547#4850#0" />
-            <element signature="e#4904#6362#0" />
-            <element signature="e#6397#6859#0" />
-            <element signature="e#6912#7058#0" />
-            <element signature="e#7154#7351#0" />
-            <marker date="1544604225299" expanded="false" signature="2373:2378" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -623,13 +594,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3653">
+          <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../TestSolrLTR/venv/Lib/site-packages/xlrd/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exampleModel.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OperationFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="782">
+          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1544686416694" expanded="true" signature="44:49" ph="..." />
+            <marker date="1544774397067" expanded="true" signature="54:59" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libsvm_formatter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#1353#2089#0" />
+            <element signature="e#4904#6362#0" />
+            <element signature="e#6397#6859#0" />
+            <element signature="e#6912#7058#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExcuteSolrCommand.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
+            <marker date="1544774835365" expanded="true" signature="84:3823" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GenerateQueryClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1544775015400" expanded="true" signature="48:49" ph="..." />
+            <marker date="1544775015400" expanded="true" signature="924:929" ph="..." />
+            <marker date="1544775015400" expanded="true" signature="1567:1572" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_and_upload_demo_model1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+            <marker date="1544774662968" expanded="true" signature="470:1639" ph="..." />
+            <marker date="1544774662968" expanded="true" signature="2093:2096" ph="..." />
           </folding>
         </state>
       </provider>

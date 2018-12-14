@@ -52,6 +52,7 @@ class LibSvmFormatter:
                 self.curFeatIndex += 1
         return self.featureNameToId[key]
 
+
     def convertLibSvmModelToLtrModel(self, libSvmModelLocation, outputFile, modelName, featureStoreName):
         with open(libSvmModelLocation, 'r') as inFile:
             with open(outputFile, 'w') as convertedOutFile:
