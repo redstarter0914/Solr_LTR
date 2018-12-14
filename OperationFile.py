@@ -29,8 +29,10 @@ class OperationFiles:
 
     def GetFiles(self, filepath):
         files = os.listdir(os.curdir + "/" + filepath)
+        #print(files)
         filelist = []
         for file in files:
-            filelist.append(file)
+            #filelist.append(os.curdir + "/" + filepath+"/"+file)
+            filelist.append(os.curdir + "/" + filepath+"/"+file)
         #print(filelist)
         return filelist

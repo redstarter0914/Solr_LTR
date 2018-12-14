@@ -29,15 +29,27 @@ def RunReRank(config, FileData):
                                            config["solrFeatureStoreName"])
     print("8 Uploading model (" + config["solrModelFile"] + ") to Solr")
     solrcmd.uploadModel(config["collection"], config["host"], config["port"], config["solrModelFile"], config["solrModelName"])
-
+    print("------------------------END----------------------------")
 
 def GetReRankQueries(config):
     # 批量读取文件夹内文件·
     print("3 Converting querier(" + config["userQueriesFilePath"] + " exchange file")
     openlistdir = OperationFile.OperationFiles
-    filesdata = openlistdir.GetTranDataList(openlistdir, config["userQueriesFilePath"])
+    flist = openlistdir.GetFiles(openlistdir, config["userQueriesFilePath"])
+    #print(flist)
+    print("------------------------START----------------------------")
+    for d in flist:
+        print("Get Data by " + d)
+        print("----------------------------------------------------")
+        datalst = openlistdir.open_excel(openlistdir, d)
+        RunReRank(config, datalst)
+
+# print(d)
+# datalst = openlistdir.open_excel(openlistdir, d)
+# RunReRank(config, d)
+    #filesdata = openlistdir.GetTranDataList(openlistdir, config["userQueriesFilePath"])
     #print(filesdata)
-    RunReRank(config, filesdata)
+    #RunReRank(config, filesdata)
     #for d in filesdata:
         #print(d)
         #datalst = openlistdir.open_excel(openlistdir, d)
