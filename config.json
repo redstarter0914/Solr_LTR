@@ -1,6 +1,6 @@
 {
-  "host":                     "localhost",
-  "port":                     8984,
+  "host":                     "solrcloud-b6e265c9af0148e8.elb.ap-northeast-1.amazonaws.com",
+  "port":                     80,
   "collection":               "JapanDocs",
   "requestHandler":           "query",
   "q":                        "*:*",

@@ -3,14 +3,14 @@
 	"store": "JapanDocFeatureStoreBody",
 	"name": "JapanDocModelBody",
 	"features": [
-		{ "name":"lnsubstringbody2g"},
+		{ "name":"content"},
 		{ "name":"docdatetime"},
 		{ "name":"lnexpdate"},
         { "name":"originalScore"}
 		],
 		"params": 	{
 		    "weights": {
-			    "lnsubstringbody2g":0.3,
+			    "content":0.3,
 			    "docdatetime":0.1,
 			    "lnexpdate":0.1,
 			    "originalScore":0.5

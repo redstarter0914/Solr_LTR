@@ -1,6 +1,7 @@
 import json
 import http.client
 import urllib
+import socket
 
 solrQueryUrl = ""
 
@@ -8,11 +9,14 @@ solrQueryUrl = ""
 class ExcuteSolr:
     def setupSolr(self, collection, host, port, featuresFile, featureStoreName):
         '''Sets up solr with the proper features for the test'''
-        conn = http.client.HTTPConnection(host, port)
+        print(host)
+        h = socket.gethostbyname(host)
+        print(h)
+        conn = http.client.HTTPConnection(h, port)
         baseUrl = "/solr/" + collection
         featureUrl = baseUrl + "/schema/feature-store"
-        # conn.request("DELETE", featureUrl+"/JapanDocFeatureStore")
-        # r1 = conn.getresponse()
+        #conn.request("DELETE", featureUrl+"/JapanDocFeatureStore")
+        #r1 = conn.getresponse()
 
         conn.request("DELETE", featureUrl + "/" + featureStoreName)
         r = conn.getresponse()
@@ -52,7 +56,8 @@ class ExcuteSolr:
     def generateTrainingData(self, solrQueries, host, port):
         '''Given a list of solr queries, yields a tuple of query , docId , score , source , feature vector for each query.
         Feature Vector is a list of strings of form "key=value"'''
-        conn = http.client.HTTPConnection(host, port)
+        h = socket.gethostbyname(host)
+        conn = http.client.HTTPConnection(h, port)
         headers = {"Connection": " keep-alive"}
         try:
             for queryUrl, query, docId, score, source in solrQueries:
@@ -87,7 +92,8 @@ class ExcuteSolr:
         modelUrl = "/solr/" + collection + "/schema/model-store"
         headers = {'Content-type': 'application/json'}
         with open(modelFile) as modelBody:
-            conn = http.client.HTTPConnection(host, port)
+            h = socket.gethostbyname(host)
+            conn = http.client.HTTPConnection(h, port)
             conn.request("DELETE", modelUrl + "/" + modelName)
             r = conn.getresponse()
             msg = r.read()
