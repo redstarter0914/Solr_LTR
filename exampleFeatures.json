@@ -4,7 +4,7 @@
     "name" : "content",
     "class" : "org.apache.solr.ltr.feature.SolrFeature",
     "params" : {
-      "fq": ["{!type=edismax qf=content v=$qq}&qq=\"${user_query}\""]
+      "fq": ["{!type=edismax qf=content v=$qq}&qq=${user_query}"]
     }
   },
   {

@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="642bd097-09f8-4f7a-afc9-a2b051f76fa5" name="Default Changelist" comment="update model and feature">
-      <change afterPath="$PROJECT_DIR$/ExpertData/ExportScoreData20181217105802855.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExcuteSolrCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExcuteSolrCommand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExpertData/1_ExportScoreData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExpertData/2_ExportScoreData.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exampleFeatures.json" beforeDir="false" afterPath="$PROJECT_DIR$/exampleFeatures.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exampleModel.json" beforeDir="false" afterPath="$PROJECT_DIR$/exampleModel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exampleTrainedModel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exampleTrainedModel.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,14 +88,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="3" />
-          <entry key="json" value="214" />
+          <entry key="json" value="218" />
           <entry key="py" value="3405" />
           <entry key="txt" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="214" />
+          <entry key="JSON" value="218" />
           <entry key="PLAIN_TEXT" value="67" />
           <entry key="Python" value="3408" />
         </counts>
@@ -199,8 +193,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exampleFeatures.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            <state relative-caret-position="-83">
+              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -285,10 +279,10 @@
         <option value="$PROJECT_DIR$/OperationFile.py" />
         <option value="$PROJECT_DIR$/train_and_upload_demo_model1.py" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/exampleFeatures.json" />
         <option value="$PROJECT_DIR$/ExcuteSolrCommand.py" />
         <option value="$PROJECT_DIR$/exampleModel.json" />
         <option value="$PROJECT_DIR$/exampleTrainedModel.txt" />
+        <option value="$PROJECT_DIR$/exampleFeatures.json" />
       </list>
     </option>
   </component>
@@ -475,8 +469,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.505295" side_tool="true" weight="0.3409836" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.494705" visible="true" weight="0.3409836" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5060514" side_tool="true" weight="0.3409836" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49394855" visible="true" weight="0.3409836" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49924356" weight="0.32786885" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -685,8 +679,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/exampleFeatures.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="-83">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
         </state>
       </provider>
     </entry>
