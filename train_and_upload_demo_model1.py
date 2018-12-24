@@ -17,7 +17,7 @@ def RunReRank(config, FileData):
 
     print("5 Running Solr queries to extract features")
     solrcmd = ExcuteSolrCommand.ExcuteSolr()
-    fvGenerator = solrcmd.generateTrainingData(reRankQueries, config["host"], config["port"])
+    fvGenerator = solrcmd.generateTrainingData(reRankQueries, config["host"], config["port"], config)
     formatter = libsvm_formatter.LibSvmFormatter()
     formatter.processQueryDocFeatureVector(fvGenerator, config["trainingFile"])
     print("6 Training model using '" + config["trainingLibraryLocation"] + " " + config["trainingLibraryOptions"] + "'")

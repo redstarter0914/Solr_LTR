@@ -3,17 +3,11 @@
 	"store": "JapanDocFeatureStoreBody",
 	"name": "JapanDocModelBody",
 	"features": [
-		{ "name":"content"},
-		{ "name":"docdatetime"},
-		{ "name":"lnexpdate"},
-		{ "name":"originalScore"}
+
 		],
 		"params": {
 			"weights": {
-				"content":0.0,
-				"docdatetime":0.13248973,
-				"lnexpdate":-0.00012568038,
-				"originalScore":12.620711
+
 		}
 	}
 }
