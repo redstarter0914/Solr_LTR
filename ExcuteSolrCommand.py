@@ -10,13 +10,13 @@ solrQueryUrl = ""
 class ExcuteSolr:
     def setupSolr(self, collection, host, port, featuresFile, featureStoreName):
         '''Sets up solr with the proper features for the test'''
-        print(host)
+        #print(host)
         h = socket.gethostbyname(host)
-        print(h)
+        #print(h)
         conn = http.client.HTTPConnection(h, port)
         baseUrl = "/solr/" + collection
         featureUrl = baseUrl + "/schema/feature-store"
-        #conn.request("DELETE", featureUrl+"/JapanDocFeatureStore")
+        #conn.request("DELETE", featureUrl+"/featureStore")
         #r1 = conn.getresponse()
 
         conn.request("DELETE", featureUrl + "/" + featureStoreName)

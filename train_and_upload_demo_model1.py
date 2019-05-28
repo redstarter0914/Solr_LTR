@@ -13,6 +13,7 @@ from optparse import OptionParser
 def RunReRank(config, FileData):
     print("4 Create Query DataList")
     genqueries = GenerateQueryClass.GenerateQueries()
+    print(FileData)
     reRankQueries = genqueries.generateQueriesExcelData(FileData, config["collection"], config["requestHandler"], config["solrFeatureStoreName"], config["efiParams"] )
 
     print("5 Running Solr queries to extract features")

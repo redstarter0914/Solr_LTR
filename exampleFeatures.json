@@ -1,5 +1,21 @@
 [
   {
+    "store":"JapanDocFeatureStoreBody",
+    "name":"lntags",
+    "class":"org.apache.solr.ltr.feature.SolrFeature",
+    "params":{
+           "q" : "{!dismax qf=lntags v=$qq}&qq=${user_query}"
+    }
+  },
+  {
+        "store": "JapanDocFeatureStoreBody",
+        "name": "title",
+        "class": "org.apache.solr.ltr.feature.SolrFeature",
+        "params": {
+           "q" : "{!dismax qf=title v=$qq}&qq=${user_query}"
+        }
+    },
+  {
     "store" : "JapanDocFeatureStoreBody",
     "name" : "content",
     "class" : "org.apache.solr.ltr.feature.SolrFeature",

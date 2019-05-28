@@ -1,3 +1,6 @@
  
 python.exe train_and_upload_demo_model1.py -c config.json
 
+ "host":                     "solrcloud-b6e265c9af0148e8.elb.ap-northeast-1.amazonaws.com",
+  "port":                     80,
+
