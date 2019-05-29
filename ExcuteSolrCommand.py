@@ -47,11 +47,15 @@ class ExcuteSolr:
             solrQueryUrl += "&q="
             solrQueryUrl = solrQueryUrl.replace(" ", "+")
             solrQueryUrl += urllib.parse.quote_plus("id:")
+        #print(searchText.strip())
         userQuery = urllib.parse.quote_plus(searchText.strip().replace("'", "\\'").replace("/", "\\\\/"))
+        #userQuery = urllib.parse.quote_plus(searchText.strip())
+        #print(userQuery)
         solrQuery = solrQueryUrl + '"' + urllib.parse.quote_plus(docId) + '"'  # + solrQueryUrlEnd
-        solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', urllib.parse.quote_plus(
-            "\\'" + userQuery + "\\'"))
-        print(solrQuery)
+        #solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', urllib.parse.quote_plus(
+            #"\\'" + userQuery + "\\'"))
+        solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', userQuery)
+        #print(solrQuery)
         return solrQuery
 
     def generateTrainingData(self, solrQueries, host, port, config):
@@ -66,6 +70,7 @@ class ExcuteSolr:
                 r = conn.getresponse()
                 msg = r.read()
                 msgDict = json.loads(msg)
+                print(msgDict)
                 fv = ""
                 docs = msgDict['response']['docs']
                 if len(docs) > 0 and "[features]" in docs[0]:

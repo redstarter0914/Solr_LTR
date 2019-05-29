@@ -3,6 +3,8 @@
 	"store": "JapanDocFeatureStoreBody",
 	"name": "JapanDocModelBody",
 	"features": [
+		{ "name":"lntags"},
+		{ "name":"title"},
 		{ "name":"content"},
 		{ "name":"docdatetime"},
 		{ "name":"lnexpdate"},
@@ -10,10 +12,12 @@
 		],
 		"params": {
 			"weights": {
+				"lntags":9.995016,
+				"title":0.0,
 				"content":1.0,
-				"docdatetime":0.22768432,
-				"lnexpdate":-0.0001256873,
-				"originalScore":4.598481
+				"docdatetime":0.22313854,
+				"lnexpdate":0.22743385,
+				"originalScore":4.9028025
 		}
 	}
 }

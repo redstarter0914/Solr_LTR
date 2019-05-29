@@ -11,6 +11,7 @@ class GenerateQueries:
                 #print(line)
                 solrQuery = generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText,
                                                 docId)
+                #print(solrQuery)
                 solrQueryUrls.append((solrQuery, searchText, docId, score, source))
         #print(solrQueryUrls)
         return solrQueryUrls
@@ -23,6 +24,7 @@ class GenerateQueries:
         solrcmd= ExcuteSolrCommand.ExcuteSolr()
         for searchText, docId, score, source in datalst:
             solrQuery = solrcmd.generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId)
+            #print(solrQuery)
             solrQueryUrls.append((solrQuery, searchText, docId, score, source))
         # print(solrQueryUrls)
         return solrQueryUrls
@@ -33,9 +35,9 @@ class GenerateQueries:
         solrcmd = ExcuteSolrCommand.ExcuteSolr()
         #print(UserQueriesFiles)
         for searchText, docId, score, source in UserQueriesFiles:
-            print(docId)
+            #print(docId)
             solrQuery = solrcmd.generateHttpRequest(collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId)
-
+            print(solrQuery)
             solrQueryUrls.append((solrQuery, searchText, docId, score, source))
-            print(solrQueryUrls)
+            #print(solrQueryUrls)
         return solrQueryUrls

@@ -4,23 +4,15 @@
     "name":"lntags",
     "class":"org.apache.solr.ltr.feature.SolrFeature",
     "params":{
-           "q" : "{!dismax qf=lntags v=$qq}&qq=${user_query}"
+           "q" : "{!dismax qf=lntags v=$qq}&qq=${USERQUERY}"
     }
   },
-  {
-        "store": "JapanDocFeatureStoreBody",
-        "name": "title",
-        "class": "org.apache.solr.ltr.feature.SolrFeature",
-        "params": {
-           "q" : "{!dismax qf=title v=$qq}&qq=${user_query}"
-        }
-    },
   {
     "store" : "JapanDocFeatureStoreBody",
     "name" : "content",
     "class" : "org.apache.solr.ltr.feature.SolrFeature",
     "params" : {
-      "fq": ["{!type=edismax qf=content v=$qq}&qq=${user_query}"]
+      "fq": ["{!type=edismax qf=content v=$qq}&qq=${USERQUERY}"]
     }
   },
   {
