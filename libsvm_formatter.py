@@ -23,7 +23,7 @@ class LibSvmFormatter:
                     _writeRankSVMPairs(curListOfFv, output)
                     curListOfFv = []
                     curQueryAndSource = query + source
-
+                #print(curListOfFv)
                 curListOfFv.append((relevance, self._makeFeaturesMap(featureVector)))
             _writeRankSVMPairs(curListOfFv, output) #This catches the last list of comparisons
 
@@ -39,7 +39,7 @@ class LibSvmFormatter:
                 features[self._getFeatureId(featName)] = float(featValue)
                 self.featurels[featName] = float(featValue)
             else:
-                print(1111111)
+                print("features is null")
         #print(features)
         #self.featurels=features
        # print(self.featurels)
@@ -114,18 +114,20 @@ def _writeRankSVMPairs(listOfFeatures, output):
     #print(listOfFeatures)
     for d1 in range(0, len(listOfFeatures)):
         for d2 in range(d1+1, len(listOfFeatures)):
-          #  print(listOfFeatures[d1])
-           # print(listOfFeatures[d2])
+            #print(listOfFeatures[d1])
+            #print(listOfFeatures[d2])
             doc1, doc2 = listOfFeatures[d1], listOfFeatures[d2]
             fv1, fv2 = doc1[1], doc2[1]
             d1Relevance, d2Relevance = float(doc1[0]), float(doc2[0])
             #outputLibSvmLine("0", subtractFvMap(fv1, fv2), output)
+            d1R = str(d1Relevance) + "  " + "+1"
+            d1R1 = str(d1Relevance) + "  " + "-1"
             if d1Relevance - d2Relevance > PAIRWISE_THRESHOLD:#d1Relevance > d2Relevance
-                outputLibSvmLine("+1", subtractFvMap(fv1, fv2), output)
-                outputLibSvmLine("-1", subtractFvMap(fv2, fv1), output)
+                outputLibSvmLine(d1R, subtractFvMap(fv1, fv2), output)
+                outputLibSvmLine(d1R1, subtractFvMap(fv2, fv1), output)
             elif d1Relevance - d2Relevance < -PAIRWISE_THRESHOLD: #d1Relevance < d2Relevance:
-                outputLibSvmLine("+1", subtractFvMap(fv2, fv1), output)
-                outputLibSvmLine("-1", subtractFvMap(fv1, fv2), output)
+                outputLibSvmLine(d1R, subtractFvMap(fv2, fv1), output)
+                outputLibSvmLine(d1R1, subtractFvMap(fv1, fv2), output)
             else: #Must be approximately equal relevance, in which case this is a useless signal and we should skip
                 continue
 

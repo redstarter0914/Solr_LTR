@@ -14,7 +14,7 @@ def RunReRank(config, FileData):
     print("4 Create Query DataList")
     genqueries = GenerateQueryClass.GenerateQueries()
     #print(FileData)
-    reRankQueries = genqueries.generateQueriesExcelData(FileData, config["collection"], config["requestHandler"], config["solrFeatureStoreName"], config["efiParams"] )
+    reRankQueries = genqueries.generateQueriesExcelData(FileData, config["collection"], config["requestHandler"], config["solrFeatureStoreName"], config["efiParams"], config["QueryColums"])
 
     print("5 Running Solr queries to extract features")
     solrcmd = ExcuteSolrCommand.ExcuteSolr()
@@ -24,8 +24,7 @@ def RunReRank(config, FileData):
     print("6 Training model using '" + config["trainingLibraryLocation"] + " " + config["trainingLibraryOptions"] + "'")
     libsvm_formatter.trainLibSvm(config["trainingLibraryLocation"], config["trainingLibraryOptions"],
                                  config["trainingFile"], config["trainedModelFile"])
-    print(
-        "7 Converting trained model (" + config["trainedModelFile"] + ") to solr model (" + config["solrModelFile"] + ")")
+    print("7 Converting trained model (" + config["trainedModelFile"] + ") to solr model (" + config["solrModelFile"] + ")")
     formatter.convertLibSvmModelToLtrModel(config["trainedModelFile"], config["solrModelFile"], config["solrModelName"],
                                            config["solrFeatureStoreName"])
     print("8 Uploading model (" + config["solrModelFile"] + ") to Solr")
@@ -70,6 +69,9 @@ def main(argv=None):
         print("1 Uploading features ("+config["solrFeaturesFile"]+") to Solr")
         solrcmd = ExcuteSolrCommand.ExcuteSolr()
         solrcmd.setupSolr(config["collection"], config["host"], config["port"], config["solrFeaturesFile"], config["solrFeatureStoreName"])
+
+        #print("1-1 upload test model")
+        #solrcmd.uploadModelTest(config["collection"], config["host"], config["port"], config["solrModelFileFirst"])
 
         print("2 Excute LTR Data")
         GetReRankQueries(config)

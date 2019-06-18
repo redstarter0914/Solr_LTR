@@ -16,9 +16,9 @@ class ExcuteSolr:
         conn = http.client.HTTPConnection(h, port)
         baseUrl = "/solr/" + collection
         featureUrl = baseUrl + "/schema/feature-store"
-        #conn.request("DELETE", featureUrl+"/featureStore")
+        #conn.request("DELETE", "/solr/JapanDocs/schema/model-store/JapanDocModelBody")
         #r1 = conn.getresponse()
-
+        #msg1 = r1.read()
         conn.request("DELETE", featureUrl + "/" + featureStoreName)
         r = conn.getresponse()
         msg = r.read()
@@ -34,11 +34,12 @@ class ExcuteSolr:
         conn.request("POST", featureUrl, featuresBody, headers)
         r = conn.getresponse()
         msg = r.read()
+
         if (r.status != http.client.OK and r.status != http.client.ACCEPTED):
             raise Exception("Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
         conn.close()
 
-    def generateHttpRequest(self, collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId):
+    def generateHttpRequest(self, collection, requestHandler, solrFeatureStoreName, efiParams, searchText, docId, QueryColums):
         global solrQueryUrl
         if len(solrQueryUrl) < 1:
             solrQueryUrl = "/".join(["", "solr", collection, requestHandler])
@@ -46,14 +47,11 @@ class ExcuteSolr:
                 ["id", "score", "[features store=" + solrFeatureStoreName + " " + efiParams + "]"]))
             solrQueryUrl += "&q="
             solrQueryUrl = solrQueryUrl.replace(" ", "+")
-            solrQueryUrl += urllib.parse.quote_plus("id:")
+            solrQueryUrl += urllib.parse.quote_plus(QueryColums+":")
         #print(searchText.strip())
-        userQuery = urllib.parse.quote_plus(searchText.strip().replace("'", "\\'").replace("/", "\\\\/"))
-        #userQuery = urllib.parse.quote_plus(searchText.strip())
-        #print(userQuery)
+        userQuery = '"' + urllib.parse.quote_plus(searchText.strip().replace("'", "\\'").replace("/", "\\\\/"))+ '"'
+        #print(docId + ":" + urllib.parse.quote_plus(docId))
         solrQuery = solrQueryUrl + '"' + urllib.parse.quote_plus(docId) + '"'  # + solrQueryUrlEnd
-        #solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', urllib.parse.quote_plus(
-            #"\\'" + userQuery + "\\'"))
         solrQuery = solrQuery.replace("%24USERQUERY", userQuery).replace('$USERQUERY', userQuery)
         #print(solrQuery)
         return solrQuery
@@ -68,9 +66,9 @@ class ExcuteSolr:
             for queryUrl, query, docId, score, source in solrQueries:
                 conn.request("GET", queryUrl, headers=headers)
                 r = conn.getresponse()
-                msg = r.read()
+                msg = r.read().decode('utf-8')
                 msgDict = json.loads(msg)
-                print(msgDict)
+                #print(msgDict)
                 fv = ""
                 docs = msgDict['response']['docs']
                 if len(docs) > 0 and "[features]" in docs[0]:
@@ -102,9 +100,11 @@ class ExcuteSolr:
         headers = {'Content-type': 'application/json'}
         try:
             with open(modelFile) as modelBody:
+                #print(repr(eval(modelBody)))
                 h = socket.gethostbyname(host)
                 conn = http.client.HTTPConnection(h, port)
                 conn.request("DELETE", modelUrl + "/" + modelName)
+                #conn.request("DELETE", modelUrl + "/JapanDocModelBody")
                 r = conn.getresponse()
                 msg = r.read()
                 #print(r.status)
@@ -121,9 +121,11 @@ class ExcuteSolr:
                         r.status != http.client.CREATED and
                         r.status != http.client.ACCEPTED):
                     raise Exception("Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
+                print("9 Upload Model Success!")
 
         except Exception as e:
-            #bodys = json.load(modelBody)
+            print("9 Upload Model Fail,Pleace Check it.")
+            print(msg)
             #loggerclass.MyLog.error("Status: {0} {1}\nResponse: {2}\nmodelBody{3}".format(r.status, r.reason, msg, bodys))
             loggerclass.MyLog.error(
                 "Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
@@ -132,4 +134,27 @@ class ExcuteSolr:
             #loggerclass.MyLog.info("------------------------------------------------------------------------")
             #print(msg)
             #print(e)
+            conn.close()
+
+    def uploadModelFirst(self, collection, host, port, modelFileFirst):
+        modelUrl = "/solr/" + collection + "/schema/model-store"
+        headers = {'Content-type': 'application/json'}
+        try:
+            with open(modelFileFirst) as modelBody:
+                h = socket.gethostbyname(host)
+                conn = http.client.HTTPConnection(h, port)
+                conn.request("POST", modelUrl, modelBody, headers)
+                r = conn.getresponse()
+                msg = r.read()
+                if (r.status != http.client.OK and
+                        r.status != http.client.CREATED and
+                        r.status != http.client.ACCEPTED):
+                    raise Exception("Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
+                print("Upload model success!")
+
+        except Exception as e:
+            print("Upload model fail,pleace check it")
+            print(msg)
+            loggerclass.MyLog.error(
+                "Status: {0} {1}\nResponse: {2}".format(r.status, r.reason, msg))
             conn.close()

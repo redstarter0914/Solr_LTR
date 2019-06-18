@@ -1,0 +1,64 @@
+[
+  {
+    "store":"JapanDocFeatureStoreBody",
+    "name":"lntags",
+    "class":"org.apache.solr.ltr.feature.SolrFeature",
+    "params":{
+           "q" : "{!dismax qf=lntags}${user_query}"
+    }
+  },
+  {
+    "store" : "JapanDocFeatureStoreBody",
+    "name" : "title",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+       "q" : "{!dismax qf=title}${user_query}"
+    }
+  },
+    {
+    "store" : "JapanDocFeatureStoreBody",
+    "name" : "keywords",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+       "q" : "{!dismax qf=keywords}${user_query}"
+    }
+  },
+  {
+    "store" : "JapanDocFeatureStoreBody",
+    "name" : "urlkeywords",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+       "q" : "{!dismax qf=urlkeywords}${user_query}"
+    }
+  },
+  {
+    "store" : "JapanDocFeatureStoreBody",
+    "name" : "description",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+       "q" : "{!dismax qf=description}${user_query}"
+    }
+  },
+  {
+    "store" : "JapanDocFeatureStoreBody",
+    "name" : "body",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+       "q" : "{!dismax qf=body}${user_query}"
+    }
+  },
+  {
+     "store" : "JapanDocFeatureStoreBody",
+    "name" : "docdatetime",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "{!func}recip(ms(NOW,docdatetime), 3.16e-11, 1, 1)"
+    }
+  },
+  {
+    "store" : "JapanDocFeatureStoreBody",
+    "name" : "originalScore",
+    "class" : "org.apache.solr.ltr.feature.OriginalScoreFeature",
+    "params" : {}
+  }
+]

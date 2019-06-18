@@ -1,0 +1,27 @@
+{
+	"class":"org.apache.solr.ltr.model.LinearModel",
+	"store": "JapanDocFeatureStoreBody",
+	"name": "JapanDocModelBody",
+	"features": [
+		{ "name":"lntags"},
+		{ "name":"title"},
+		{ "name":"keywords"},
+		{ "name":"urlkeywords"},
+		{ "name":"description"},
+		{ "name":"body"},
+		{ "name":"docdatetime"},
+        { "name":"originalScore"}
+		],
+		"params": 	{
+		    "weights": {
+			    "lntags":61,
+			    "title":19,
+			    "keywords":0,
+			    "urlkeywords":0,
+			    "description":0,
+			    "body":12,
+			    "docdatetime":4,
+			    "originalScore":4
+		}
+	}
+}
